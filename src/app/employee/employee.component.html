@@ -1,0 +1,110 @@
+<!-- <div class="container-fluid body body-content">
+  <p class="mt-5"> Shivam Kansara's Data here....</p>
+  <mat-table class="lessons-table mat-elevation-z8" [dataSource]="products">
+
+    <ng-container matColumnDef="email">
+        <mat-header-cell *matHeaderCellDef>Email</mat-header-cell>
+        <mat-cell *matCellDef="let lesson">{{lesson.email}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="gender">
+        <mat-header-cell *matHeaderCellDef>Gender</mat-header-cell>
+        <mat-cell class="description-cell"
+                  *matCellDef="let lesson">{{lesson.gender}}</mat-cell>
+
+    </ng-container>
+
+    <ng-container matColumnDef="id">
+        <mat-header-cell *matHeaderCellDef>Id</mat-header-cell>
+        <mat-cell class="duration-cell"
+                  *matCellDef="let lesson">{{lesson.id}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef>Name</mat-header-cell>
+      <mat-cell class="duration-cell"
+                *matCellDef="let lesson">{{lesson.name}}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="status">
+    <mat-header-cell *matHeaderCellDef>status</mat-header-cell>
+    <mat-cell class="duration-cell"
+              *matCellDef="let lesson">{{lesson.status}}</mat-cell>
+  </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+
+    <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+
+  </mat-table>
+</div> -->
+
+
+
+<div class="container pt-3">
+
+  <div class="row">
+    <div class="col-lg-6">
+      <button (click)="openDialog()" mat-fab color="primary" title="Add Records" aria-label="Example icon button with a delete icon">
+        <mat-icon>library_add</mat-icon>
+      </button>
+
+      <!-- <button style="margin-left: 2px;"  mat-fab color="primary" title="Add Records" aria-label="Example icon button with a delete icon">
+        <mat-icon>delete</mat-icon>
+      </button> -->
+
+      <!-- <button style="margin-left: 2px;"  mat-fab color="primary" title="Add Records" aria-label="Example icon button with a delete icon">
+        <mat-icon>library_add</mat-icon>
+      </button> -->
+    </div>
+
+    <div class="col-lg-3" >
+      &nbsp;
+    </div>
+
+    <div class="col-lg-3" >
+      <form class="example-form" >
+        <mat-form-field class="example-full-width">
+          <mat-label>Find Here..</mat-label>
+          <input (keyup)="applyFilter($event)" style="justify-content: flex-end;" matInput placeholder="Ex. Pizza" value="">
+        </mat-form-field>
+      </form>
+    </div>
+  </div>
+
+
+  <mat-table [dataSource]="dataSource" class="mat-elevation-z8 mt-2">
+    <!-- Position Column -->
+    <ng-container matColumnDef="Id">
+      <mat-header-cell *matHeaderCellDef> #. </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.id}} </mat-cell>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="Name">
+      <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="Gender">
+      <mat-header-cell *matHeaderCellDef> Gender </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.gender}} </mat-cell>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="Email">
+      <mat-header-cell *matHeaderCellDef> Email </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.email}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="Status">
+      <mat-header-cell *matHeaderCellDef> Status </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.status}} </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+</div>
+
